@@ -15,36 +15,36 @@ module rocker() {
         translate([0, -29, -1])
             cylinder(h = 30, r = 1.3);
         // Recess for switches
-        translate([-13.8,-31,-1])
-            cube([7.8, 15, 21]);
-        translate([6,-31,-1])
-            cube([7.8, 15, 21]);
-        translate([-13.8,-31,-1])
+        translate([-15.3,-31,-1])
+            cube([9.3, 15, 21]);
+        translate([-15.3,-31,-1])
             rotate([0,0,10])
                 cube([2,10,21]);
-        translate([12,-30.6,-1])
+        translate([13.5,-30.6,-1])
             rotate([0,0,-10])
                 cube([2,10,21]);
+        translate([6,-31,-1])
+            cube([9.3, 15, 21]);
         // Spring and pin holes
         rotate([90, 0, 0]) {
             translate([20, 9, 25]) {
                 translate([0, 0, 2])
                     cylinder(h = 10, r = 2.75);
-                translate([0, 0, -10])
+                translate([1, 0, -10])
                     cylinder(h = 50, r = 1.6);
                 translate([-1, 0, -10])
                     cylinder(h = 50, r = 1.6);
-                translate([-1.4, -1.6, -10])
+                translate([-1.1, -1.6, -10])
                     cube([2,3.2,50]);
             }
             translate([-20, 9, 25]) {
                 translate([0, 0, 2])
                     cylinder(h = 10, r = 2.75);
-                translate([0, 0, -10])
+                translate([-1, 0, -10])
                     cylinder(h = 50, r = 1.6);
                 translate([1, 0, -10])
                     cylinder(h = 50, r = 1.6);
-                translate([-0.6, -1.6, -10])
+                translate([-0.9, -1.6, -10])
                     cube([2,3.2,50]);
             }
         }
