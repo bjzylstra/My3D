@@ -12,8 +12,8 @@ module rocker() {
         translate([-56,-50,-1])
             cube([30, 100, 21]);
         // Axle hole
-        translate([0, -28, -1])
-            cylinder(h = 20, r = 1.3);
+        translate([0, -29, -1])
+            cylinder(h = 30, r = 1.3);
         // Recess for switches
         translate([-15.3,-31,-1])
             cube([9.3, 15, 21]);
@@ -49,15 +49,15 @@ module rocker() {
             }
         }
         // Flatten bottom
-        translate([-16,-43,-1])
-            cube([32,10,20]);
+        translate([-15,-64,-1])
+            cube(30);
     }
 }
 
 module handleBase() {
     difference() {
         cylinder(h = 18, r = 12.5);
-        translate([-15, -37.5, -1])
+        translate([-15, -38, -1])
             cube(40);
         translate([6, 0, -1])
             cube(20);
@@ -73,7 +73,7 @@ module upperHandle() {
     }
 }
 
-translate([0,0,4]) 
+translate([0,0,5]) 
     rotate([90,0,0]) {
         union() {
             translate([0,29,0])
