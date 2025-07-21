@@ -10,8 +10,7 @@ module face() {
 }
 
 face();
-translate([44.7,2.3,44.7])
-    rotate([angle-90,0,0])
-    rotate([90-angle,-90,0])
+translate([44.7*2-13.4,4,44.7-12.9])
+    rotate([-3.,-45,7.1])
         mirror([1,0,0])
             face();
