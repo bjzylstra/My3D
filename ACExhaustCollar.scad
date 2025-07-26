@@ -1,6 +1,6 @@
 thickness = 2.2;
 openingWidth = 62;
-openingLength = 207;
+openingLength = 204;
 ridgeWidth = 7;
 screwDiameter = 4.5;
 
