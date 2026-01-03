@@ -1,0 +1,32 @@
+TinkerCad (online tool)
+- for simple things
+
+Fusion360 (author favorite)
+- more CAD like
+- free for personal use (check details)
+
+Blender
+- artistic models
+- learning curve
+
+FreeCad
+- precise modeling
+
+OpenScad(?)
+- coding
+- precision and automation
+
+MeshMixer (not sure about the name)
+
+ZBrush
+- sculpture
+- costs
+
+
+1. Tinkercad - https://www.tinkercad.com/
+2. Fusion 360 - https://3dprintdood.com/fusion360
+3. Blender - https://www.blender.org/
+X. FreeCad - https://www.freecad.org/
+5. OpenScad - https://openscad.org/
+6. MeshMixer - https://3dprintdood.com/meshmixer
+7. Zbrush - https://3dprintdood.com/z-brush
