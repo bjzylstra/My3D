@@ -2,7 +2,7 @@ $fn =20;
 clampLength = 300;
 clampWidth = 20;
 boltDiameter = 3;
-boltOffset = clampLength/2 - 25;
+boltOffset = clampLength/2 - 25.5;
 threadHeight = 10;
 wallThickness = 2.5;
 gap = 0.5;
@@ -104,7 +104,7 @@ module grilleWithLouvres() {
 module boltHole() {
     boltHeadDiameter = 8.1;
     boltHeadHeight = 3;
-    boltThickness = boltDiameter + 1;
+    boltThickness = boltDiameter + 2;
     union() {
         translate([0,0,(2*wallThickness+0.3)/2])
             cylinder(h=2*wallThickness+0.3,
@@ -170,4 +170,4 @@ module halfGrill() {
             stud(0,xOffset);
 }
 
-damper();
+grille();

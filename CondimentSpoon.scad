@@ -24,7 +24,8 @@ module handle() {
                     [adjWallThickness+rimThickness,handleLength-hookLength],
                     [adjWallThickness+rimThickness,handleLength-adjWallThickness],
                     [adjWallThickness,handleLength-adjWallThickness],
-                    [adjWallThickness,0]
+                    // Not sure why this is not just scoopDepth. Some proportion thing?
+                    [scoopDepth-wallThickness,0]
                     ]);
 }
 
