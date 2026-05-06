@@ -28,7 +28,7 @@ module windowCutout(x,y)
 module fastenerCutout(x,y)
 {
     translate([x, y, 0]) {
-        cylinder(h = 10, r = 1.25, center = true);
+        cylinder(h = 10, r = 1.3, center = true);
     }
 }
 
@@ -51,7 +51,30 @@ module window(x,y)
     }
 }
 
-window(35,60);
-window(35,-60);
-window(-35,-60);
-window(-35,60);
+doorWidth = 105;
+doorRectangleHeight = 170;
+
+module doorOutline()
+{
+    translate([0,0,thickness/2])
+        cube([doorWidth,doorRectangleHeight,thickness], center = true);
+    translate([0,doorRectangleHeight/2,thickness/2])
+        cylinder(h = thickness, d = doorWidth, center = true);
+}
+
+module door() 
+{
+    setback = 10;
+    difference() {
+        doorOutline();
+        fastenerCutout(doorWidth/2-setback, doorRectangleHeight/2 - setback);
+        fastenerCutout(-(doorWidth/2-setback), doorRectangleHeight/2 - setback);
+        fastenerCutout(doorWidth/2-setback, 0);
+        fastenerCutout(-(doorWidth/2-setback), 0);
+        fastenerCutout(doorWidth/2-setback, -(doorRectangleHeight/2 - setback));
+        fastenerCutout(-(doorWidth/2-setback), -(doorRectangleHeight/2 - setback));
+        fastenerCutout(0, doorRectangleHeight/2 + doorWidth/2 - setback);
+    }
+}
+
+door();
