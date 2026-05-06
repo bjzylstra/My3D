@@ -1,18 +1,20 @@
 height = 30;
+outerLength = 45;
+outerHeight = 24*2;
 
 module pipeOuterPolygonHalf() {
     linear_extrude(height)
         polygon([[0,0],
             [9,1],
             [17,2],
-            [18,3],
+            [19,3],
             [21,5],
             [22,10],
-            [26,39],
-            [25,41],
-            [19,44],
-            [9,46],
-            [0,47]
+            [outerHeight/2,37],
+            [23,39],
+            [19,42],
+            [9,44],
+            [0,outerLength]
             ]);
 }
 
@@ -69,10 +71,10 @@ module pipeInner() {
 
 module connector() {
     linear_extrude(height)
-        polygon([[27,10],
-            [55,10],
-            [55,-10],
-            [25,-10]
+        polygon([[25,9],
+            [55,9],
+            [55,-9],
+            [25,-9]
             ]);
 }
 
@@ -85,40 +87,39 @@ module screwHole(holeDiameter) {
 }
 
 module screwFlange() {
-    translate([0,24,0])
+    translate([0,outerLength/2-1,0])
         difference() {
             cube([flangeThickness,flangeWidth,height]);
             translate([-0.2, flangeWidth/2, height*0.2])
-                screwHole(1);
+                screwHole(1.2);
             translate([-0.2, flangeWidth/2, height*0.8])
-                screwHole(2);
+                screwHole(2.2);
         }
 }
 
 module rightClip() {
-    translate([75,0,0])
-        rotate([0,0,90])
-            pipeInner();
+    translate([65,-11,0])
+        pipeInner();
     connector();
     halfPipe();
     screwFlange();
     mirror([0, 0, 1])
-        translate([0,-50-flangeWidth,-height])
+        translate([0,-outerLength-flangeWidth-3,-height])
             screwFlange();
 }
 
 module leftClip() {
-    translate([75,0,0])
-        rotate([0,0,90])
+    translate([65,11,0])
+        rotate([0,0,180])
             pipeInner();
     mirror([0,1,0])
         connector();
     mirror([0,1,0])
         halfPipe();
-    translate([0,2,0])
+    translate([0,5,0])
         screwFlange();
     mirror([0, 0, 1])
-        translate([0,-48-flangeWidth,-height])
+        translate([0,-outerLength-flangeWidth+2,-height])
             screwFlange();
 }
 
